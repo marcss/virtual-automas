@@ -1,0 +1,20 @@
+body {
+	background: #474f4b;
+}
+
+.jumbotron {
+	margin: 30px auto;
+	color: #bbb;
+	text-shadow: 1px 2px 2px #000, -3px 4px 24px #b6c4db;
+	padding: 20px;
+	background: #262827;
+}
+
+#backstory {
+	transition: all 0.5s ease;
+}
+
+div.row { 
+	display: flex;
+  flex-wrap: wrap;
+}
