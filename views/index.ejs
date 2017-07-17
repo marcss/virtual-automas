@@ -3,25 +3,33 @@
 <div class="container">
     <div class="jumbotron">
         <h1>Virtual Automas</h1>
-        <p>In 2014, Morten Monrad Pedersen gave life to the first of his army of automatons with Viticulture, naming it "Automa". Morten expressed how this Automa was going to help us with everyday tasks, making our lives easier. Many believe that even Morten was unaware how dangerous these creations would be.</p>
-        <p>Now, in 2188, we seek to study these Automas to discover their weakness and regain control of civilization. So far, we have been able to reverse engineer and virtualize several varieties of Automa and isolate from the global network. We provide these to you for training. Be brave.</p>
-    </div>
-    <div class="row">
-        <div class="row">
-            <div class="col-md-3 col-xs-6">
-                Div 1
-            </div>
-            <div class="col-md-3 col-xs-6">
-                Div 2
-            </div>
-            <div class="col-md-3 col-xs-6">
-                Div 3
-            </div>
-            <div class="col-md-3 col-xs-6">
-                Div 4
-            </div>
+        <div id="backstory" class="hidden">
+            <p>In 2014, Morten Monrad Pedersen gave life to the first of his army of automatons with Viticulture, naming it "Automa". Morten expressed how this Automa was going to help us with everyday tasks, making our lives easier. Many believe that even Morten was unaware how dangerous these creations would be.</p>
+            <p>Now, in 2188, we seek to study these Automas to discover their weakness and regain control of civilization. So far, we have been able to reverse engineer and virtualize several varieties of Automa and isolate them from the global network and provide them to you for your training. </p>
+        </div>
+        <div>
+            <p>Below are the Virtual Automas currently available. Be brave. </p>
+        </div>
+        <div>
+            <button id="bstoryBtn" class="btn pull-right">What's the story?</button>
         </div>
     </div>
+        <div class="row">
+            <% for(var i = 0; i < automas.length; i++) { %>
+            <div class="col-md-3 col-xs-6">
+                <div class="thumbnail">
+                    <% if (automas[i].thumb === "") { %>
+                    <img src="./img/siyan-ren-29565.jpg">
+                    <% } else { %>
+                    <img src="<%= automas[i].thumb %>">
+                    <% } %>
+                    <h2><%= automas[i].name %></h2>
+                    <h4><%= automas[i].id %> </h4>
+                    
+                </div>
+            </div>
+            <% } %>
+        </div>
 </div>
 
 <% include ./partials/footer %>
