@@ -22,12 +22,21 @@ app.get("/", function(req, res){
 });
 
 app.get("/:g", function(req, res){
-    var g = req.params.g;
-    g = g.replace(/-/g, ' ');
-   var apology = "You have requested Automa for <span style=\"text-transform: uppercase;\">" + g + "</span>. ";
-   apology += "Unfortunately, we have not yet captured this Automa. Sorry.";
-   res.send(apology);
-   
+    for(var i = 0; i < automas.length; i++) {
+        if(automas[i].ref === req.params.g) {
+            res.redirect(302, automas[i].url);
+        }
+        // } else {
+        //     var g = req.params.g;
+        //     g = g.replace(/-/g, ' ');
+        //     var apology = "<p>You have requested Automa for: </p>";
+        //     apology += "<p><span class=\"vaname\">" + g + "</span>. </p>";
+        //     apology += "<p>Unfortunately, we have not yet captured this Automa. Sorry.</p>";
+        //     // res.send(apology);
+        //     res.render("runautoma", { apology : apology });
+
+        // }
+    }
 });
 
 
